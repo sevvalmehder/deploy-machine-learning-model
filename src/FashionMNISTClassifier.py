@@ -44,15 +44,16 @@ class FashionMNISTClassifier():
         print('\nTest accuracy:', test_acc)
 
     def predict(self, image, model):
-        probability_model = tf.keras.Sequential([model,
-                                                 tf.keras.layers.Softmax()])
-        predictions = probability_model.predict(image)
+        predictions = model.predict(image)
         predicted_label = np.argmax(predictions[0])
 
         return self.class_names[predicted_label]
 
     def get_callbacks(self):
-        callback = tf.keras.callbacks.ModelCheckpoint(filepath='models/model.{epoch:02d}-{accuracy:.2f}.h5',
-                                                      save_weights_only=True,
-                                                      verbose=1)
+        callback = tf.keras.callbacks.ModelCheckpoint(
+            filepath='models/model.{epoch:02d}-{accuracy:.2f}.h5', verbose=1)
         return callback
+
+    def load_model(self, model_path):
+        model = tf.keras.models.load_model(model_path)
+        return model
