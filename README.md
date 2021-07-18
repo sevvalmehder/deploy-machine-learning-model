@@ -4,4 +4,4 @@ In this project the goal is simple. Take [Tensorflow Basic classification: Class
 
 ### Design
 We can simplify the basic design like:
-![The basic design](https://github.com/sevvalmehder/deploy-machine-learning-model/blob/master/DMLM_basic_design.png) 
+![The basic design](https://github.com/sevvalmehder/deploy-machine-learning-model/blob/main/DMLM_basic_design.png)
